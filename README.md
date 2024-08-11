@@ -52,3 +52,7 @@ Sebuah aplikasi E-Library dengan fitur-fitur sebagai berikut:
     ```
 
 8. Aplikasi akan berjalan pada localhost port 8000
+
+### Dokumentasi Gambar
+1) Halaman Bookshelf (Katalog)
+![1_Bookshelf](https://github.com/user-attachments/assets/e99ece5a-b428-48be-a939-be7edd37c256)
