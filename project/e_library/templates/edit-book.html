@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>E-Library - Edit Book</title>
+</head>
+<body style="background-image: url('static/images/background.png');">
+    <nav class="sticky top-0 bg-blue-100 shadow-md flex justify-between text-cyan-700 font-bold px-14 py-6">
+        <a href="/">E-Library</a>
+
+        <ul class="flex gap-6">
+            <li><a href="/">Bookshelf</a></li>
+            <li><a href="{% url 'favorite-book' %}">My Favorites</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <h2 class="text-center mt-14">Uh-oh, this page is not ready yet..</h2>
+
+    <!-- <form class="flex flex-col w-4/12" action="{% url 'add-book' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class="border-2 border-gray-300" type="text" name="title" placeholder="title" value="{{book.title}}" />
+        <input class="border-2 border-gray-300" type="text" name="author" placeholder="author" value="{{book.author}}" />
+        <input class="border-2 border-gray-300" type="text" name="summary" placeholder="summary" value="{{book.summary}}" />
+        <input class="border-2 border-gray-300" type="number" name="pages" placeholder="pages" value="{{book.pages}}" />
+        <input type="file" name="image" value="{{book.image}}" />
+        <input class="border-2 border-gray-300" type="text" name="isbn" placeholder="isbn" value="{{book.isbn}}" />
+        <button class="bg-blue-100" type="submit">Add</button>
+    </form> -->
+</body>
+</html>

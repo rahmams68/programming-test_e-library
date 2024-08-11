@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>E-Library - Add Book</title>
+</head>
+<body class="bg-white">
+    <nav class="sticky top-0 bg-blue-100 shadow-md flex justify-between text-cyan-700 font-bold px-14 py-6">
+        <a href="/">E-Library</a>
+
+        <ul class="flex gap-6">
+            <li><a href="/">Bookshelf</a></li>
+            <li><a href="{% url 'favorite-book' %}">My Favorites</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="px-14 mx-16 mt-14 mb-24">
+        <div class="bg-blue-50 p-14 rounded flex justify-center">
+            <form class="flex flex-col max-w-[800px]" action="{% url 'add-book' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2 class="text-center font-bold text-cyan-700 text-3xl mb-8">Input New Data</h2>
+                <input class="p-3 rounded mb-4 border-2 border-gray-300" type="text" name="title" placeholder="Book title" required />
+                <input class="p-3 rounded mb-4 border-2 border-gray-300" type="text" name="author" placeholder="Author" required />
+                <input class="p-3 rounded mb-4 border-2 border-gray-300" type="text" name="summary" placeholder="Book Summary" required />
+                <input class="p-3 rounded mb-4 border-2 border-gray-300" type="number" name="pages" placeholder="Total pages" required />
+                <input class="mb-4" type="file" name="image" required />
+                <input class="p-3 rounded mb-8 border-2 border-gray-300" type="text" name="isbn" placeholder="ISBN" required />
+                <button class="p-3 rounded mb-4 bg-cyan-700 text-white" type="submit">Add New Book</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

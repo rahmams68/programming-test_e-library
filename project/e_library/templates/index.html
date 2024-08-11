@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>E-Library</title>
+</head>
+<body style="background-image: url('static/images/background.png');">
+    <nav class="sticky top-0 bg-blue-100 shadow-md flex justify-between text-cyan-700 font-bold px-14 py-6">
+        <a href="/">E-Library</a>
+
+        <ul class="flex gap-6">
+            <li><a href="/">Bookshelf</a></li>
+            <li><a href="{% url 'favorite-book' %}">My Favorites</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="text-center py-24">
+        <h1 class="text-3xl text-cyan-500 font-bold mb-2">Hi, <span class="text-cyan-700">{{request.user.username}}!</span></h1>
+        <h1 class="text-6xl text-cyan-500 font-bold">Welcome to <span class="text-cyan-700">E-Library</span></h1>
+    </div>
+
+    <main class="px-14 pb-14 mb-24 min-h-full">
+        <div class="bg-white px-14 pt-8 rounded">
+            <div class="bg-white flex justify-between pt-4">
+                <form id="search" method="post" action="/">
+                    {% csrf_token %}
+                    <input type="text" class="border-2 border-gray-300 p-3 rounded" placeholder="Search by title . . ." name="keyword" />
+                    <button class="bg-blue-100 ml-4 p-3 rounded text-cyan-700 font-bold">Search</button>
+                </form>
+    
+                <form id="add" method="get" action="{% url 'add-book' %}">
+                    <button type="submit" class="bg-cyan-700 text-white p-3 font-bold rounded">Add New Book</button>
+                </form>
+            </div>
+
+            <p class="py-8 text-gray-600 text-right">Total book found: {{num_books}}</p>
+
+            <div id="books" class="bg-white grid md:grid-cols-4 gap-[3rem] sm:grid-cols-2 grid-cols-1 pb-14">
+                {% for book in books %}
+                <div class="book border-2 border-gray-300 shadow-md rounded text-center min-h-[200px] max-w-[300px]">
+                    <img src="{{book.image.url}}" alt="Image not available" class="object-cover w-full max-h-[300px]">
+                    <h3 class="font-bold mt-4">{{book.title}}</h3>
+                    <p>by {{book.author}}</p>
+                    <a href="{% url 'book-detail' book.id %}" class="text-sm text-cyan-700 px-4 mb-8"><i>More info</i></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>E-Library - Book Detail</title>
+</head>
+<body style="background-image: url('static/images/background.png');">
+    <nav class="sticky top-0 bg-blue-100 shadow-md flex justify-between text-cyan-700 font-bold px-14 py-6">
+        <a href="/">E-Library - Book Detail</a>
+
+        <ul class="flex gap-6">
+            <li><a href="/">Bookshelf</a></li>
+            <li><a href="{% url 'favorite-book' %}">My Favorites</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="px-14 mx-14 mt-14">
+        <div class="bg-blue-50 p-14 rounded flex flex-col md:flex-row justify-center">
+            <img src="{{book.image.url}}" class="md:w-[25%] w-full mr-10" />
+            
+            <div class="md:w-[50%] w-full flex flex-col justify-between text-center md:text-justify">
+                <div>
+                    <h2 class="font-bold text-xl">{{book.title}}</h2>
+                    <p><i>{{book.author}}</i></p>
+                </div>
+
+                <p class="text-justify">{{book.summary}}</p>
+                
+                <div>
+                    <p class="">Total Pages: {{book.pages}}</p>
+                    <p class="">ISBN: {{book.isbn}}</p>
+                </div>
+
+                <div>
+                    <a class="bg-cyan-700 text-white text-sm rounded py-1.5 px-4" href="{% url 'edit-book' book.id %}">Edit Book</a>
+                    <a class="bg-red-700 text-white text-sm rounded py-1.5 px-4" href="{% url 'delete-book' book.id %}">Delete Book</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
