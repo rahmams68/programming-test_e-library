@@ -55,16 +55,20 @@ Sebuah aplikasi E-Library dengan fitur-fitur sebagai berikut:
 
 ### Dokumentasi Gambar
 1. Halaman Bookshelf (Katalog)
-![1_Bookshelf](https://github.com/user-attachments/assets/e99ece5a-b428-48be-a939-be7edd37c256)
+![1_Bookshelf(1)](https://github.com/user-attachments/assets/4852c521-9c2e-49a7-b52b-0a30344c0f86)
+
 
 2. Halaman Detail Buku
-![2_Book Detail](https://github.com/user-attachments/assets/aee98535-3782-4d72-b749-e64afeb306bd)
+![2_Book Detail(1)](https://github.com/user-attachments/assets/05fe3084-77ad-446f-9f04-474b77d388cc)
+
 
 3. Halaman Login
-![3_Login (small screen)](https://github.com/user-attachments/assets/a251f4d6-b023-4643-8887-88abfdb8f69e)
+![3_Login (small screen)(1)](https://github.com/user-attachments/assets/6fc28478-047d-4e96-80f9-0a804710007e)
+
 
 4. Halaman Registrasi
-![4_Registrasi (small screen)](https://github.com/user-attachments/assets/e0fe3cd6-7b19-450c-99ac-84904792ab77)
+![4_Registrasi (small screen)(1)](https://github.com/user-attachments/assets/075c092d-9f40-41df-9eb3-aa8ca34f7f4f)
+
 
 5. Halaman Tambah Buku
-![5_Add Book](https://github.com/user-attachments/assets/7d1057f8-458a-4c63-b655-3cd8ee2b8a25)
+![5_Add Book(1)](https://github.com/user-attachments/assets/ecd8890f-4ddf-4a3a-9e10-3440f57fb8af)
